@@ -14,11 +14,14 @@ let addItem = () => {
     toDoValue = inputValue.value;
     let toDoItem = {item: toDoValue, isDone: false};
     toDoList.push(toDoItem);
+    inputValue.value = "";
+    saveToDo();
     render();
 }
 
 let removeItem = (index) => {
     toDoList.splice(index,1)
+    saveToDo();
     render();
 }
 
@@ -37,8 +40,9 @@ let render = (status) => {
 
     htmlToDoArray = filter.map((item, index) => {
         return `<li style="text-decoration: ${item.isDone ? 'line-through' : ''}; 
-        list-style-type: none"
-        onclick="toggleDone(${index})">${item.item}<button onclick="removeItem(${index})">X</button>
+        list-style-type: none; color: ${item.isDone ? '#749C75' : '#92140C'}"
+        onclick="toggleDone(${index})">${item.item}
+        <button style="background-color: #FFBF46" onclick="removeItem(${index})">X</button>
         </li>`
     }).join('');
 
@@ -47,8 +51,25 @@ let render = (status) => {
 
 function toggleDone (index) {
     toDoList[index].isDone=!(toDoList[index].isDone);
+    saveToDo();
     render(); 
 
     console.log(toDoList);
     console.log(htmlToDoArray);
 }
+
+function saveToDo(){
+    let str = JSON.stringify(toDoList);
+    localStorage.setItem("toDoList", str);
+}
+
+function getToDo(){
+    let str = localStorage.getItem("toDoList");
+    toDoList = JSON.parse(str);
+    if (!toDoList){
+        toDoList = [];
+    }
+}
+
+getToDo()
+render()

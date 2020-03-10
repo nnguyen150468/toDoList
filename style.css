@@ -1,3 +1,35 @@
-ul li {
-    text-decoration: none;
+body {
+    background-image: url('honeycomb.jpg');
+}
+
+#container {
+    background-color: #ffffff;
+    text-align: center;
+    font-family: 'Roboto';
+    margin-top: 5%;
+    padding-top: 2em;
+    padding-bottom: 5em;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.inputRow {
+    margin-top: 1em;
+}
+
+.inputRowItem {
+    font-size: 1em;
+    padding: 8px;
+    margin-bottom: 1em;
+}
+
+.inputRow button {
+    background-color: rgb(255, 228, 177);
+    font-weight: bold;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.radio-button {
+    margin-left: 1.5em;
 }
