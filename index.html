@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-bee Done</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Nguyen's To-do List</h1>
+    <input id="toDoInput" type="text" name="">
+    <button onclick="addItem()">Add</button>
+    <input type="radio" value="doneFilter" name="filterList" id="doneFilter" onchange="render('done')">
+    <label for="doneFilter">Done</label>
+    <input type="radio" value="notDoneFilter" name="filterList" id="notDoneFilter" onchange="render('notDone')">
+    <label for="notDoneFilter">Not Done</label>
+    <input type="radio" value="allFilter" name="filterList" id="allFilter" onchange="render()">
+    <label for="allFilter">All</label>
+    <ul id="resultArea"></ul>
+    <ul id="filterArea"></ul>
+    <script src="main.js"></script>
+</body>
+</html>
