@@ -41,7 +41,7 @@ let render = (status) => {
     htmlToDoArray = filter.map((item, index) => {
         return `<li style="text-decoration: ${item.isDone ? 'line-through' : ''}; 
         list-style-type: none; color: ${item.isDone ? '#749C75' : '#92140C'}"
-        onclick="toggleDone(${index})">${item.item}
+        onclick="toggleDone(${index})"><img src="${item.isDone ? 'yescheck.png' : ''}" width="20">${item.item}
         <button style="background-color: #FFBF46" onclick="removeItem(${index})">X</button>
         </li>`
     }).join('');
